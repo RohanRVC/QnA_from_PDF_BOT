@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link href="./static/assets/rvc.png" rel="icon">
+
+  <title>Works</title>  
+
+<link href="./static/main.css" rel="stylesheet"></head>
+    <style>
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="./index.html" title="">01 : Home</a></li>
+          <li><a href="./works.html" title="">02 : Works</a></li>
+          <li><a href="./certification.html" title="">03 : Certification</a></li>
+          <li><a href="./experience.html" title="">04 : Experience</a></li>
+          <li><a href="./about.html" title="">05 : About me</a></li>
+          <li><a href="./contact.html" title="">06 : Contact me</a></li>
+          <!-- <li><a href="./components.html" title="">05 : Components</a></li> -->
+        </ul>
+
+
+      </div> 
+      
+ 
+    <div class="container">
+        <img src="./static/assets/images/qa_pdf.png" style="display: block;
+        margin-left: auto;
+        margin-right: auto;padding-top: 20px;" width="400" height="500" class="img-responsive" alt="">
+        <h1>Ask a Question</h1>
+        <p>This model is trained on <b><i><u>"The 48 Laws of Power"</u></i></b></p>
+
+        <form method="post" action="/get-answer">
+            <input type="text"  name="question" placeholder="Enter your question here" required>
+            <h3>Wait 5 sec to generate the answer Please...</h3>
+            <input type="submit" style="text-size-adjust:120px;" value="Get Answer">
+        </form>
+        <textarea id="answerArea" rows="4" readonly placeholder="Answer will appear here..."></textarea>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const question = document.querySelector('input[name="question"]').value;
+            fetch('/get-answer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: question })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('answerArea').textContent = data.answer;
+            });
+        });
+    </script>
+</body>
+</html>
