@@ -1,5 +1,5 @@
 # QnA_from_PDF_BOT
-Link -: https://rohanrvc.pythonanywhere.com/temp_project.html
+Link -:  https://rohanrvc.pythonanywhere.com/temp_project.html
 ![image](https://github.com/RohanRVC/QnA_from_PDF_BOT/assets/80825254/78a14f5d-35a8-43c9-aaf1-064c48b84cb0)
 
 The overview of the "Question Answer Project" based on "The 48 Laws of Power" by Robert Greene involves creating a web application that allows users to ask questions and receive answers related to the content of the book. Here are the key components of this project:
