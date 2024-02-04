@@ -9,7 +9,7 @@ Text Extraction from PDF: The project starts with extracting text from "The 48 L
 Web Application Development: A Flask web application is developed. This app provides a user interface where users can submit their questions.
 
 Question Processing: When a user submits a question through the web app, the question is sent to the backend.
-
+ 
 API Integration: The Flask app integrates with a Model or a similar service. This integration is used to process the user's question against the extracted text from the book.
 
 Answer Generation: The model processes the question and generates an answer based on the content of "The 48 Laws of Power." The answer is then sent back to the web app.
