@@ -12,7 +12,7 @@ def my_home():
 def html_pages(page_name):
     return render_template(page_name)
 # print(hello_world())
-
+ 
 def write_to_file(data):
     with open("database.txt",mode='a') as database:
         email=data['email']
