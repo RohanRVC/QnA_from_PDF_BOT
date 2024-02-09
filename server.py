@@ -4,7 +4,7 @@ from flask import Flask , render_template , url_for , request , redirect , jsoni
 import csv , requests
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/") 
 def my_home():
     return render_template("index.html")
  
